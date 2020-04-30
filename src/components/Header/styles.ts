@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 interface ContainerProps {
   size?: 'small' | 'large';
+  selectedPage?: 'lists';
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -17,8 +18,14 @@ export const Container = styled.div<ContainerProps>`
     justify-content: space-between;
 
     nav {
+      display: flex;
+      height: 34px;
+      align-items: flex-start;
+      justify-content: center;
+
       a {
         color: #fff;
+        display: flex;
         text-decoration: none;
         font-size: 16px;
         transition: opacity 0.2s;
@@ -29,6 +36,12 @@ export const Container = styled.div<ContainerProps>`
 
         &:hover {
           opacity: 0.6;
+        }
+
+        &.selected {
+          border-bottom-color: #ff872c;
+          border-bottom-style: solid;
+          padding-bottom: 10px;
         }
       }
     }
